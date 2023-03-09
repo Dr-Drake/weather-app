@@ -47,6 +47,7 @@ export const WeatherDataDisplay = styled.div`
     align-items: center;
     flex: 1;
     padding: 3% 0;
+    transition: all 0.5s;
 
     & p{
         font-size: 1.2rem;
