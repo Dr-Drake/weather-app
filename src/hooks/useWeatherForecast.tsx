@@ -12,7 +12,7 @@ export interface WeatherData {
     "speed": number;
 }
 
-const API_KEY = "52a02f8dcaf54232a2c1a384b29841b1" //"your_api_key_here";
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 export default function useWeatherForecast(searchTerm: string) {
 

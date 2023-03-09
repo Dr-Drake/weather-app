@@ -1,22 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Observable } from "rxjs";
-import { debounceTime, distinctUntilChanged, switchMap } from "rxjs/operators";
-import useWeatherForecast from "../hooks/useWeatherForecast";
+import React, { useState } from "react";
 import { useWeatherForecastCache } from "../hooks/useWeatherForecastCache";
-import { WeatherResponse } from "../types/WeatherResponse";
 import { capitalizeFirstLetter } from "../utils/stringFormatUtils";
 import { InputContainer, MainContainer, WeatherDataDisplay, WeatherFooter, WeatherInput } from "./styles";
-
-interface WeatherData {
-    description: string;
-    icon: string;
-    temp: number;
-    humidity: number;
-    "feels_like": number;
-    "speed": number;
-}
-
-const API_KEY = "52a02f8dcaf54232a2c1a384b29841b1" //"your_api_key_here";
 
 const WeatherApp: React.FC = () => {
  
