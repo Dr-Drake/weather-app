@@ -8,10 +8,8 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 export function useWeatherForecastCache(searchTerm?: string){
     // Fetcher
-    const fetcher = (url: string) => axios.get(url).
-    then((res: AxiosResponse<WeatherResponse>) => res.data);
+    const fetcher = (url: string) => axios.get(url).then((res: AxiosResponse<WeatherResponse>) => res.data);
     
-
     // Fetching hook
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm?.toLowerCase()}&units=metric&appid=${API_KEY}`;
     const { data, error, mutate } = useSwr(apiUrl, fetcher);
